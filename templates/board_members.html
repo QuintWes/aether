@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+{% include 'head_template.html' %}
+<body>
+    {% include 'nav_template.html' %}
+    <div class="container">
+        <div class="row">
+            {% for board_members_year in board_members_years %}
+                <div class="project-card-parent col-md-4 mb-4 mt-4 col-sm-6 {% if loop.index > 6 %}d-none{% endif %}">
+                    <div class="card project-card position-relative" style="border-color:#b28a4e;
+                     border-width: 0.2rem;">
+                        <div class="zoom-effect">
+                            <img src="{{ url_for('static', path=board_members_year.main_image.url|replace('../', '')) }}"
+                                 class="main-project-image card-img-top" alt="{{ board_members_year.main_image.alt }}" loading="lazy">
+                            <div class="card-body d-flex flex-column align-items-center position-absolute w-100 h-100 top-0 start-0">
+                                <h2 class="card-title text-center mb-4 text-white">Bestuur
+                                    {{ board_members_year.year_start }} - {{ board_members_year.year_end }}</h2>
+                                <p1 class="card-text text-center mb-4 text-white">
+                                    {% if board_members_year.voorzitter %}
+                                        Voorzitter | {{ board_members_year.voorzitter }}
+                                    {% endif %}
+                                    {% if board_members_year.vicevoorzitter %}
+                                        Vicevoorzitter | {{ board_members_year.vicevoorzitter }}
+                                    {% endif %}
+                                    {% if board_members_year.penningmeester %}
+                                        Penningmeester | {{ board_members_year.penningmeester }}
+                                    {% endif %}
+                                </p1>
+                                 <blockquote class="blockquote text-center">
+                                    <p class="mb-0 text-white">"{{ board_members_year.famous_quote }}"</p>
+                                    <p class="blockquote-footer text-white">Bestuur {{ board_members_year.year_start }} - {{ board_members_year.year_end }} <cite
+                                            </cite></p>
+                                </blockquote>
+                            </div>
+
+                            <div class="overlayB" style="background-color:#b28a4e;"></div>
+                            <div class="overlay" style="background-color:#000;"></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4 mb-4">
+            <a id="loadMoreBtn" class="btn btn-outline-light btn-floating m-1 raise">Load More</a>
+        </div>
+    </div>
+    {% include 'footer_template.html' %}
+    <script src="/static/scripts/board_members.js"></script>
+</body>
+</html>

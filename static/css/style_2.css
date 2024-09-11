@@ -1,0 +1,161 @@
+/* Define the Trajan Pro 3 font for H1 headers */
+@font-face {
+    font-family: 'Trajan Pro 3';
+    src: url('/static/fonts/Logo font Trajan Pro 3/TrajanPro3Regular.woff2') format('woff2'),
+         url('/static/fonts/Logo font Trajan Pro 3/TrajanPro3Regular.woff') format('woff'),
+         url('/static/fonts/Logo font Trajan Pro 3/TrajanPro3Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Define the Romanica font for body text */
+@font-face {
+    font-family: 'Romanica';
+    src: url('/static/fonts/romanica/Romanica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Trajan Pro 3', serif;
+}
+
+/* Apply the Romanica font to all body text */
+body {
+    font-family: 'Romanica', sans-serif;
+}
+
+* {
+    font-family: 'Romanica', sans-serif; /* toko bij img */
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #b28a4e;
+    --secondary-color: #010464;
+    --accent-color: #b29e4e;
+    --text-color: #ffffff;
+    --background-color: #030a34;
+    --background-colorB: #030d2c;
+    --background-colorC: #000311;
+    --background-main-midden: #020321;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--background-color);
+}
+
+body.modal-open {
+    overflow: auto;
+}
+
+.content-wrap {
+    flex: 1;
+}
+
+.container {
+    flex-grow: 1;
+}
+
+.raise:hover,
+.raise:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--accent-color);
+    transform: translateY(-0.25em);
+}
+
+a.raise {
+    transition: 0.25s;
+    border: 1px solid;
+    font: inherit;
+    line-height: 1;
+    cursor: pointer;
+}
+
+a.raise:hover,
+a.raise:focus {
+    border-color: var(--accent-color);
+}
+
+p1, h1, h2, h3, span{
+    text-shadow: 0 0 2px black;
+}
+a, p1, h1, h2, h3, span{
+    color: var(--text-color);
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+}
+
+a
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+.modal-content {
+    background-color: var(--background-colorC);
+    border: 1px solid var(--accent-color);
+}
+.modal-header {
+    border-bottom: 1px solid var(--accent-color);
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 16px; /* Adjust default font size for smaller screens */
+    }
+
+    h1 {
+        font-size: 30px; /* Modify h1 size for phones */
+    }
+
+    h2 {
+        font-size: 24px; /* Modify h2 size for phones */
+    }
+
+    h3 {
+        font-size: 18px; /* Modify h3 size for phones */
+    }
+
+    p1,
+    h1,
+    h2,
+    h3,
+    span {
+        text-shadow: 0 0 1px black; /* Reduce text shadow blur for better readability on smaller screens */
+    }
+
+    /* Other adjustments for smaller screens */
+}

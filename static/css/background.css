@@ -1,0 +1,12 @@
+.area {
+    background: var(--background-color);
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    z-index: -1;
+}
+@media (max-width: 767.98px) {
+    .area {
+        background: var(--background-color); /* Solid color for mobile */
+    }
+}

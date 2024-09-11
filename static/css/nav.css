@@ -1,0 +1,30 @@
+.navbar {
+    background: var(--background-colorB);
+    border-bottom: 3px solid var(--text-color);
+}
+
+.nav-item a {
+    font-size: 24px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-color); /* Default color */
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    color: var(--primary-color); /* Color when active */
+}
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+
+@media (max-width: 991.98px) { /* Adjust this value based on your needs */
+    .mobile-fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030; /* Keep navbar on top */
+    }
+}

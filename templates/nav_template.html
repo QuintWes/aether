@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg mb-4 mobile-fixed-top">
+    <a class="navbar-brand" href="/">Aether Dispuut</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item {% if active=='main' %}active{% endif %}">
+                <a class="nav-link" href="/main">Aether</a>
+            </li>
+            <li class="nav-item {% if active=='board_members' %}active{% endif %}">
+                <a class="nav-link" href="/board_members">Besturen</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var toggler = document.querySelector('.navbar-toggler');
+        var menu = document.getElementById('navbarNav');
+
+        // Toggle menu visibility on click
+        toggler.addEventListener('click', function() {
+            menu.classList.toggle('show'); // Use Bootstrap's 'show' class for toggling visibility
+        });
+    });
+</script>

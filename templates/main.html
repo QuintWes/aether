@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+{% include 'head_template.html' %}
+<!--Wie dit leest, trek een bak-->
+<body class="area">
+    {% include 'nav_template.html' %}
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-12 text-center text-white">
+                <div class="d-flex justify-content-center mb-4">
+                    <img class="img-fluid" src="/static/img/Aether_Logo_01.png" alt="Aether logo" style="max-width:
+                    30%;"
+                         loading="lazy">
+                </div>
+                <div class="typing-container p-1">
+                    <h2>Aether is&nbsp;<span typing-speed="30" typing-delay="1000"
+                                             words="een dispuut,een broederschap,een vriendengroep,voor het leven"></span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-12 text-center text-white">
+                <h2>Welkom bij het Aether Herendispuut!</h2>
+                <p>
+                    Aether is het toonaangevende herendispuut van de studievereniging <b><a
+                        href="https://svxtend.nl/"
+
+                                                                                         target="_blank">
+                    Xtend</a></b>,
+                    verbonden aan de opleidingen Communicatie, Media Design en ICT aan de HAN in Arnhem en Nijmegen. Elk jaar kiezen wij een
+                    nieuw bestuur en organiseren we een scala aan activiteiten en feesten, waaronder ons beroemde Aether weekend.
+                </p>
+                <h2>Activiteiten</h2>
+                <p>
+                    Voor updates over onze activiteiten, volg ons op <a class="m-1" href="https://www.instagram.com/aether_dispuut"
+                   target='_blank' role="button" data-toggle="tooltip" data-placement="top" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                </p>
+                <h2>Lid worden?</h2>
+                <p>
+                    Om lid te worden van Aether,
+                    moet je eerst aangesloten zijn bij Xtend en goed passen binnen ons dispuut. Alleen dan zou je een
+                    officiële Aether uitnodiging kunnen ontvangen. Wij nodigen je van
+                    harte uit om onze borrels en
+                    gezellige evenementen bij te wonen en de sfeer te proeven.
+                </p>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center">
+                <img class="img-fluid" src="/static/img/aethermain.png" alt="Aether logo" loading="lazy">
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-8 offset-md-2 text-center text-white">
+                <p>Aether is opgericht op: <b>2018.10.12</b></p>
+                <div id="timer">
+                    <span id="years" class="font-weight-bold"></span> years
+                    <span id="months" class="font-weight-bold"></span> months
+                    <span id="days" class="font-weight-bold"></span> days
+                    <span id="hours" class="font-weight-bold"></span> hours
+                    <span id="minutes" class="font-weight-bold"></span> minutes
+                    <span id="seconds" class="font-weight-bold"></span> seconds
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+    {% include 'footer_template.html' %}
+<script>
+
+
+</script>
+<script src="/static/scripts/main.js"></script>
+<script src="/static/scripts/nav-text.js"></script>
+</html>
