@@ -1,0 +1,26 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main  # Adjust this if you want to trigger on a different branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+
+      - name: Execute Deployment Script
+        env:
+          PROJECT_DIR: "/home/quint/python projects/aether"  # Ensure this path matches your setup
+          KNOWN_HOSTS: ${{ secrets.SERVER_SSH_KNOWN_HOSTS }}
+        run: |
+          ssh -o StrictHostKeyChecking=no quint@192.168.1.153 'bash "${PROJECT_DIR}/update_and_restart.sh"'
