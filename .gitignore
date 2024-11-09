@@ -1,0 +1,15 @@
+# Environment variables
+.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Docker-related files
+*.log
+.dockerignore
+docker-compose.override.yml
+
+# IDE/editor config files
+.vscode/
+.idea/
