@@ -49,12 +49,12 @@ async def git_webhook(request: Request, background_tasks: BackgroundTasks):
 
 def update_repository():
     print("Starting update_repository function")
-    # Define the full path to the script inside the /aether folder
+    # Define the full path to the script inside the /aether folder, wrapped in quotes
     script_path = "/home/quint/python projects/aether/update_and_restart.sh"
     
-    # Run the host script over SSH (assuming you're triggering this on the server locally)
-    ssh_command = f"bash {script_path}"
-    result = subprocess.run(ssh_command, shell=True, capture_output=True, text=True)
+    # Use 'bash' to execute the script with the path wrapped in double quotes
+    result = subprocess.run(f'bash "{script_path}"', shell=True, capture_output=True, text=True)
+    
     print(f"Script output: {result.stdout}")
     if result.stderr:
         print(f"Script error: {result.stderr}")
