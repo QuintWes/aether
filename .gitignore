@@ -13,3 +13,5 @@ docker-compose.override.yml
 # IDE/editor config files
 .vscode/
 .idea/
+
+update_and_restart.sh

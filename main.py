@@ -36,23 +36,25 @@ async def board_members_page(request: Request):
 async def fallback_page(request: Request, page: str):
     return templates.TemplateResponse("404.html", {"request": request}, status_code=404)
 
-# Webhook endpoint to pull updates from GitHub
 @app.post("/git-webhook")
 async def git_webhook(request: Request, background_tasks: BackgroundTasks):
     payload = await request.json()
     
     # Check if the webhook event is a push to the main branch
     if payload.get("ref") == "refs/heads/main":
-        # Run the pull and restart commands in the background
+        # Run the update script in the background
         background_tasks.add_task(update_repository)
         
     return {"message": "Webhook received"}
 
 def update_repository():
-    logging.info("Pulling latest changes from GitHub...")
-    result = subprocess.run(["git", "pull"], cwd=PROJECT_DIR, capture_output=True, text=True)
-    logging.info(result.stdout)
+    print("Starting update_repository function")
+    # Define the full path to the script inside the /aether folder
+    script_path = "/home/quint/python projects/aether/update_and_restart.sh"
     
-    logging.info("Restarting only the 'aether' Docker container...")
-    result = subprocess.run(["docker-compose", "up", "-d", "--no-deps", "aether"], cwd=PROJECT_DIR, capture_output=True, text=True)
-    logging.info(result.stdout)
+    # Run the host script over SSH (assuming you're triggering this on the server locally)
+    ssh_command = f"bash {script_path}"
+    result = subprocess.run(ssh_command, shell=True, capture_output=True, text=True)
+    print(f"Script output: {result.stdout}")
+    if result.stderr:
+        print(f"Script error: {result.stderr}")
