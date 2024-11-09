@@ -49,11 +49,8 @@ async def git_webhook(request: Request, background_tasks: BackgroundTasks):
 
 def update_repository():
     print("Starting update_repository function")
-    # Define the full path to the script inside the /aether folder, wrapped in quotes
-    script_path = "/home/quint/python projects/aether/update_and_restart.sh"
-    
-    # Use 'bash' to execute the script with the path wrapped in double quotes
-    result = subprocess.run(f'bash "{script_path}"', shell=True, capture_output=True, text=True)
+    # Run the host-level script from within the container via Docker
+    result = subprocess.run("docker exec -it aether /bin/bash -c '/app/update_and_restart.sh'", shell=True, capture_output=True, text=True)
     
     print(f"Script output: {result.stdout}")
     if result.stderr:
