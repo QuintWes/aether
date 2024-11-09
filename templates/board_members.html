@@ -3,6 +3,7 @@
 {% include 'head_template.html' %}
 <body>
     {% include 'nav_template.html' %}
+    <h2 class="text-center">Besturen:</h2>
     <div class="container">
         <div class="row">
             {% for board_members_year in board_members_years %}
@@ -13,7 +14,7 @@
                             <img src="{{ url_for('static', path=board_members_year.main_image.url|replace('../', '')) }}"
                                  class="main-project-image card-img-top" alt="{{ board_members_year.main_image.alt }}" loading="lazy">
                             <div class="card-body d-flex flex-column align-items-center position-absolute w-100 h-100 top-0 start-0">
-                                <h2 class="card-title text-center mb-4 text-white">Bestuur
+                                <h2 class="card-title text-center mb-4 text-white">
                                     {{ board_members_year.year_start }} - {{ board_members_year.year_end }}</h2>
                                 <p1 class="card-text text-center mb-4 text-white">
                                     {% if board_members_year.voorzitter %}
