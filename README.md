@@ -1,2 +1,2 @@
 # aether
-for aether dispuut
+daily api
