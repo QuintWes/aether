@@ -1,8 +1,0 @@
-footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background: var(--background-colorB);
-    border-top: 3px solid var(--accent-color);
-}
-
