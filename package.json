@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@chakra-ui/react": "^3.1.0",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@vercel/edge-config": "^1.4.0",
+    "framer-motion": "^11.11.11"
+  }
+}
